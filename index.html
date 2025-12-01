@@ -1,1 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dysautonomia Symptom Map</title>
+</head>
+<body>
+<div id="dysautonomia-assessment" class="wrapper">
+  <h2>Dysautonomia Symptom Check</h2>
+  <p class="sub">
+    Symptom mapping only. This does not diagnose anything, but it can help describe patterns
+    in how your nervous system, joints, bladder, and immune system are behaving.
+  </p>
 
+  <!-- Identity fields (for your own records; nothing is sent anywhere) -->
+  <div class="field-row">
+    <input type="text" id="user-name" placeholder="Name">
+    <input type="number" id="user-age" placeholder="Age">
+    <input type="email" id="user-email" placeholder="Email (optional)">
+  </div>
+
+  <form id="symptom-form">
+    <!-- Q1: orthostatic / presyncope -->
+    <div class="question-block">
+      <p>
+        When you stand up or stay upright, how often do you feel dizzy, “swimmy”, heavy-headed,
+        or like you might almost faint or black out?
+      </p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="0"> Never</label>
+        <label><input type="radio" name="q1" value="1"> Mild / occasionally</label>
+        <label><input type="radio" name="q1" value="2"> Regularly</label>
+        <label><input type="radio" name="q1" value="3"> Most days / intense</label>
+      </div>
+    </div>
+
+    <!-- Q2: heart rate / palpitations upright -->
+    <div class="question-block">
+      <p>
+        Racing or pounding heart, strong palpitations, or big jumps in heart rate when standing,
+        walking a short distance, or with light activity?
+      </p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="0"> Never</label>
+        <label><input type="radio" name="q2" value="1"> Mild / occasionally</label>
+        <label><input type="radio" name="q2" value="2"> Regularly</label>
+        <label><input type="radio" name="q2" value="3"> Most days / intense</label>
+      </div>
+    </div>
+
+    <!-- Q3: crash / PEM -->
+    <div class="question-block">
+      <p>
+        “Crash” or flare in symptoms hours or the next day after physical, mental, or emotional effort
+        (flu-ish, wired and tired, or wiped out) even when the effort seemed “small”?
+      </p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="0"> Never</label>
+        <label><input type="radio" name="q3" value="1"> Mild / occasionally</label>
+        <label><input type="radio" name="q3" value="2"> Regularly</label>
+        <label><input type="radio" name="q3" value="3"> Most days / intense</label>
+      </div>
+    </div>
+
+    <!-- Q4: temp / exercise / heat intolerance -->
+    <div class="question-block">
+      <p>
+        Heat or exercise intolerance: feeling much worse in hot weather, hot showers, crowded rooms,
+        or during/after exercise compared to others (overheating, weak, shaky, or unwell)?
+      </p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="0"> Never</label>
+        <label><input type="radio" name="q4" value="1"> Mild / occasionally</label>
+        <label><input type="radio" name="q4" value="2"> Regularly</label>
+        <label><input type="radio" name="q4" value="3"> Most days / intense</label>
+      </div>
+    </div>
+
+    <!-- Q5: gut / motility / food unpredictability -->
+    <div class="question-block">
+      <p>
+        Gut issues and unpredictable reactions to food: nausea, bloating, early fullness,
+        alternating constipation and diarrhoea, or feeling unwell after foods that
+        “should be fine” or used to be fine?
+      </p>
+      <div class="options">
+        <label><input type="radio" name="q5" value="0"> Never</label>
+        <label><input type="radio" name="q5" value="1"> Mild / occasionally</label>
+        <label><input type="radio" name="q5" value="2"> Regularly</label>
+        <label><input type="radio" name="q5" value="3"> Most days / intense</label>
+      </div>
+    </div>
+
+    <!-- Q6: brain fog -->
+    <div class="question-block">
+      <p>
+        Brain fog, slowed thinking, word-finding trouble, or short-term memory issues beyond
+        “normal tired”, especially with sensory load, stress, or when upright?
+      </p>
+      <div class="options">
+        <label><input type="radio" name="q6" value="0"> Never</label>
+        <label><input type="radio" name="q6" value="1"> Mild / occasionally</label>
+        <label><input type="radio" name="q6" value="2"> Regularly</label>
+        <label><input type="radio" name="q6" value="3"> Most days / intense</label>
+      </div>
+    </div>
+
+    <!-- Q7: pain & sensory -->
+    <div class="question-block">
+      <p>
+        Widespread pain (muscles, joints, burning/tingling), or strong sensitivity to light, sound,
+        touch, smells, or sensory overload that feels “too much” compared to others?
+      </p>
+      <div class="options">
+        <label><input type="radio" name="q7" value="0"> Never</label>
+        <label><input type="radio" name="q7" value="1"> Mild / occasionally</label>
+        <label><input type="radio" name="q7" value="2"> Regularly</label>
+        <label><input type="radio" name="q7" value="3"> Most days / intense</label>
+      </div>
+    </div>
+
+    <!-- Q8: joint instability / injury on minor strain -->
+    <div class="question-block">
+      <p>
+        Joint instability, dislocations, or injury with minor strain: loose or “bendy” joints,
+        frequent sprains or strains, joints slipping or catching, partial or full dislocations,
+        or getting injured doing things that “shouldn’t” injure most people?
+      </p>
+      <div class="options">
+        <label><input type="radio" name="q8" value="0"> Never</label>
+        <label><input type="radio" name="q8" value="1"> Mild / occasionally</label>
+        <label><input type="radio" name="q8" value="2"> Regularly</label>
+        <label><input type="radio" name="q8" value="3"> Most days / intense</label>
+      </div>
+    </div>
+
+    <!-- Q9: cardiac symptoms, normal tests -->
+    <div class="question-block">
+      <p>
+        Chest tightness, odd heart sensations, skipped beats, brief runs of fast heart rate,
+        or “something is wrong with my heart” feelings where ECG, bloods, or scans have
+        mostly come back “normal”?
+      </p>
+      <div class="options">
+        <label><input type="radio" name="q9" value="0"> Never</label>
+        <label><input type="radio" name="q9" value="1"> Mild / occasionally</label>
+        <label><input type="radio" name="q9" value="2"> Regularly</label>
+        <label><input type="radio" name="q9" value="3"> Most days / intense</label>
+      </div>
+    </div>
+
+    <!-- Q10: MCAS / histamine-type -->
+    <div class="question-block">
+      <p>
+        Flushing, itching, hives, swelling, sudden nausea, or “almost allergic” reactions
+        to foods, smells, temperature changes, or unknown triggers (even when tests are unclear)?
+      </p>
+      <div class="options">
+        <label><input type="radio" name="q10" value="0"> Never</label>
+        <label><input type="radio" name="q10" value="1"> Mild / occasionally</label>
+        <label><input type="radio" name="q10" value="2"> Regularly</label>
+        <label><input type="radio" name="q10" value="3"> Most days / intense</label>
+      </div>
+    </div>
+
+    <!-- Q11: urinary / bladder -->
+    <div class="question-block">
+      <p>
+        Bladder and urinary symptoms: unusual urgency, difficulty holding urine, leakage/incontinence,
+        pain or burning when urinating, or frequent bladder/urinary infections?
+      </p>
+      <div class="options">
+        <label><input type="radio" name="q11" value="0"> Never</label>
+        <label><input type="radio" name="q11" value="1"> Mild / occasionally</label>
+        <label><input type="radio" name="q11" value="2"> Regularly</label>
+        <label><input type="radio" name="q11" value="3"> Most days / intense</label>
+      </div>
+    </div>
+
+    <button type="button" class="btn" onclick="runScore()">View Symptom Map</button>
+  </form>
+
+  <div id="result" class="result-box"></div>
+
+  <!-- Visual map -->
+  <div id="map-container" class="map-container" style="display:none;">
+    <div class="map-left">
+      <h3 class="map-title">Visual Symptom Map</h3>
+      <p class="map-note">
+        The shaded area shows your current symptom load in each cluster.
+        Even small amounts of shading mean your body is doing extra work there.
+      </p>
+      <div id="visual-map"></div>
+    </div>
+    <div id="map-legend" class="map-legend"></div>
+  </div>
+
+  <script>
+    function runScore() {
+      var name = document.getElementById("user-name").value.trim();
+      var age = document.getElementById("user-age").value.trim();
+      var email = document.getElementById("user-email").value.trim();
+
+      if (!name || !age) {
+        showResult("Please fill in Name and Age first.");
+        return;
+      }
+
+      var QUESTION_COUNT = 11;
+      var answers = {};
+      var score = 0;
+      var missing = [];
+
+      for (var i = 1; i <= QUESTION_COUNT; i++) {
+        var field = document.querySelector('input[name="q' + i + '"]:checked');
+        if (!field) {
+          missing.push(i);
+        } else {
+          var v = parseInt(field.value, 10);
+          answers[i] = v;
+          score += v;
+        }
+      }
+
+      if (missing.length > 0) {
+        showResult("Please answer all questions (missing: " + missing.join(", ") + ").");
+        return;
+      }
+
+      var max = QUESTION_COUNT * 3;
+      var pct = Math.round((score / max) * 100);
+
+      var band;
+      if (pct < 30) {
+        band = "Lower overall load on this checklist. Even so, any non-zero symptoms are still signals worth listening to.";
+      } else if (pct < 60) {
+        band = "Moderate symptom load. Several systems are carrying extra work.";
+      } else {
+        band = "Higher symptom load. Multiple systems are strongly involved.";
+      }
+
+      function severityLabel(v) {
+        var list = ["None", "Mild / occasional", "Regular", "Most days / intense"];
+        return list[v] || "None";
+      }
+
+      var clusters = {
+        1: "Orthostatic / standing symptoms (POTS-leaning)",
+        2: "Upright heart rate / palpitations (autonomic cardiovascular)",
+        3: "Post-exertional crash / delayed payback",
+        4: "Heat and exercise intolerance",
+        5: "Gut motility + unpredictable food reactions",
+        6: "Brain fog / cognitive + sensory load",
+        7: "Pain and sensory sensitivity",
+        8: "Joint laxity, instability, dislocations, injury on minor strain",
+        9: "Cardiac sensations with often “normal” tests",
+        10: "MCAS / histamine-style reactivity",
+        11: "Bladder / urinary urgency, pain, incontinence, recurrent infections"
+      };
+
+      var perSymptomLines = [];
+      for (var j = 1; j <= QUESTION_COUNT; j++) {
+        var val = answers[j];
+        perSymptomLines.push(
+          "Q" + j + " – " + clusters[j] + ": " + severityLabel(val) + " (" + val + "/3)"
+        );
+      }
+
+      var emailLine = email ? "Email (optional): " + email + "\n" : "";
+
+      var summary =
+        name + " (" + age + " yrs)\n" +
+        emailLine +
+        "Total score: " + score + " / " + max + " (" + pct + "%)\n\n" +
+        band;
+
+      var detail =
+        "\n\nCluster view (any non-zero score here is still real and valid):\n" +
+        perSymptomLines.join("\n") +
+        "\n\nThis map does not tell you that you are “fine” or “not sick enough”. " +
+        "It simply shows where your symptoms are clustering so you and your clinician " +
+        "can have a more informed conversation.";
+
+      var fullText = summary + detail;
+
+      showResult(fullText);
+      renderVisualMap(answers, clusters);
+    }
+
+    function showResult(text) {
+      var r = document.getElementById("result");
+      r.style.display = "block";
+      r.textContent = text;
+    }
+
+    function renderVisualMap(answers, clusters) {
+      var QUESTION_COUNT = 11;
+      var size = 260;
+      var center = size / 2;
+      var maxR = 100;
+
+      var points = [];
+      for (var i = 1; i <= QUESTION_COUNT; i++) {
+        var v = answers[i] || 0;
+        var ratio = v / 3;
+        var angle = -Math.PI / 2 + (2 * Math.PI * (i - 1) / QUESTION_COUNT);
+        var r = maxR * ratio;
+        var x = center + r * Math.cos(angle);
+        var y = center + r * Math.sin(angle);
+        points.push(x.toFixed(1) + "," + y.toFixed(1));
+      }
+
+      var rings = "";
+      for (var lvl = 1; lvl <= 3; lvl++) {
+        var rr = maxR * lvl / 3;
+        rings += '<circle cx="' + center + '" cy="' + center + '" r="' + rr + '" class="ring ring-' + lvl + '"></circle>';
+      }
+
+      var axes = "";
+      for (var k = 1; k <= QUESTION_COUNT; k++) {
+        var ang = -Math.PI / 2 + (2 * Math.PI * (k - 1) / QUESTION_COUNT);
+        var x2 = center + maxR * Math.cos(ang);
+        var y2 = center + maxR * Math.sin(ang);
+        axes += '<line x1="' + center + '" y1="' + center + '" x2="' + x2.toFixed(1) + '" y2="' + y2.toFixed(1) + '" class="axis"></line>';
+      }
+
+      var svg =
+        '<svg viewBox="0 0 ' + size + ' ' + size + '" class="radar-svg">' +
+          '<g>' +
+            rings +
+            axes +
+            '<polygon points="' + points.join(" ") + '" class="radar-fill"></polygon>' +
+            '<polyline points="' + points.join(" ") + '" class="radar-outline"></polyline>' +
+          '</g>' +
+        '</svg>';
+
+      var mapEl = document.getElementById("visual-map");
+      var legendEl = document.getElementById("map-legend");
+      var mapContainer = document.getElementById("map-container");
+
+      mapEl.innerHTML = svg;
+      mapContainer.style.display = "flex";
+
+      var labels = [];
+      for (var m = 1; m <= QUESTION_COUNT; m++) {
+        var vv = answers[m] || 0;
+        labels.push(
+          '<div class="legend-item">' +
+            '<span class="legend-dot level-' + vv + '"></span>' +
+            '<span class="legend-text"><strong>' + clusters[m] + '</strong> (Q' + m + ')</span>' +
+          '</div>'
+        );
+      }
+      legendEl.innerHTML = labels.join("");
+    }
+  </script>
+
+  <style>
+    .wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      text-align: left;
+      line-height: 1.4;
+    }
+    h2 {
+      margin: 0 0 0.25rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .sub {
+      font-size: 0.9rem;
+      opacity: 0.75;
+      margin: 0 0 1rem;
+    }
+    .field-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .field-row input {
+      padding: 0.7rem;
+      border: 1px solid #e1e1e1;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      width: 100%;
+    }
+    .question-block {
+      margin: 0.8rem 0;
+      padding: 0.9rem;
+      border: 1px solid #f0f0f0;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    .question-block p {
+      font-size: 0.95rem;
+      margin: 0 0 0.5rem;
+    }
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+    label {
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      border: 0;
+      background: #222;
+      color: #fff;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    .result-box {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: #f5f5f5;
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+      display: none;
+    }
+
+    .map-container {
+      margin-top: 1.5rem;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .map-left {
+      max-width: 320px;
+      text-align: center;
+    }
+    .map-title {
+      margin: 0 0 0.25rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .map-note {
+      margin: 0 0 0.75rem;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+    .radar-svg {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .ring {
+      fill: none;
+      stroke: #eeeeee;
+      stroke-width: 1;
+    }
+    .axis {
+      stroke: #dddddd;
+      stroke-width: 0.7;
+    }
+    .radar-fill {
+      fill: rgba(0, 0, 0, 0.16);
+    }
+    .radar-outline {
+      fill: none;
+      stroke: #333333;
+      stroke-width: 1.2;
+    }
+    .map-legend {
+      max-width: 800px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1rem;
+      font-size: 0.8rem;
+      justify-content: center;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      max-width: 360px;
+    }
+    .legend-dot {
+      display: inline-block;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 999px;
+      margin-right: 0.3rem;
+      background: #dddddd;
+    }
+    .legend-dot.level-0 { background: #dddddd; }
+    .legend-dot.level-1 { background: #c6e48b; }
+    .legend-dot.level-2 { background: #ffd33d; }
+    .legend-dot.level-3 { background: #f66a0a; }
+
+    @media (min-width: 640px) {
+      .field-row {
+        flex-direction: row;
+      }
+      .field-row input {
+        flex: 1;
+      }
+    }
+  </style>
+</div>
+</body>
+</html>
